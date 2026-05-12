@@ -8,6 +8,9 @@ export default function Home() {
 
   useEffect(() => {
     setMounted(true);
+    // Tambahkan smooth scrolling ke elemen html
+    document.documentElement.classList.add('scroll-smooth');
+    
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       setTheme('dark');
     }
@@ -28,13 +31,13 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-[#09090b] text-zinc-800 dark:text-zinc-300 font-sans selection:bg-zinc-800 selection:text-white dark:selection:bg-white dark:selection:text-black transition-colors duration-500">
       
-      {/* Subtle Premium Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-cyan-500/10 to-transparent dark:from-cyan-500/5 blur-[100px] pointer-events-none" />
+      {/* Subtle Premium Glow - Diperbesar sedikit agar lebih dramatis */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-cyan-500/15 via-cyan-500/5 to-transparent dark:from-cyan-500/10 dark:via-cyan-500/5 blur-[120px] pointer-events-none" />
 
       {/* Minimalist Navbar */}
       <nav className="fixed top-0 w-full z-50 bg-zinc-50/80 dark:bg-[#09090b]/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800/50 transition-colors duration-500">
         <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="font-semibold text-zinc-900 dark:text-white text-lg tracking-tight">
+          <div className="font-bold text-zinc-900 dark:text-white text-xl tracking-tighter hover:scale-105 transition-transform cursor-pointer">
             JAB.
           </div>
           
@@ -45,7 +48,7 @@ export default function Home() {
             <a href="#contact" className="hidden sm:block hover:text-zinc-900 dark:hover:text-white transition-colors">Contact</a>
             <button 
               onClick={toggleTheme} 
-              className="p-2 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors ml-2"
+              className="p-2 rounded-full hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors ml-2"
               aria-label="Toggle Theme"
             >
               {theme === 'dark' ? (
@@ -63,26 +66,29 @@ export default function Home() {
         
         {/* Hero Section */}
         <section className="space-y-6 pt-10">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-zinc-900 dark:text-white leading-[1.1]">
-            Software Engineer <br className="hidden sm:block" />
-            <span className="text-zinc-400 dark:text-zinc-500">crafting robust logic.</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-zinc-900 dark:text-white leading-[1.1]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-900 to-zinc-500 dark:from-white dark:to-zinc-400">Software Engineer</span> <br className="hidden sm:block" />
+            <span className="text-zinc-400 dark:text-zinc-500 font-medium">crafting robust logic.</span>
           </h1>
           <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
             I'm an Informatics Engineering student at ITB. I specialize in large-scale software engineering, system security, and data analysis, bridging technical complexity with clear, functional design.
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
-            <a href="#contact" className="px-5 py-2.5 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-black text-sm font-medium hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors">
+            <a href="#contact" className="px-6 py-3 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-black text-sm font-medium hover:bg-zinc-800 dark:hover:bg-zinc-200 hover:-translate-y-0.5 transition-all shadow-lg shadow-zinc-900/20 dark:shadow-white/10">
               Get in Touch
             </a>
-            <a href="https://www.linkedin.com/in/jonathanalveraldobangun/" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 rounded-full bg-zinc-200/50 dark:bg-zinc-800/50 text-zinc-900 dark:text-white text-sm font-medium hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors">
-              LinkedIn
+            <a href="https://www.linkedin.com/in/jonathanalveraldobangun/" target="_blank" rel="noopener noreferrer" className="group px-6 py-3 rounded-full bg-zinc-200/50 dark:bg-zinc-800/50 text-zinc-900 dark:text-white text-sm font-medium hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:-translate-y-0.5 transition-all">
+              LinkedIn <span className="inline-block transition-transform group-hover:translate-x-1">↗</span>
             </a>
           </div>
         </section>
 
         {/* About Section */}
         <section id="about" className="space-y-8 scroll-mt-32">
-          <h2 className="text-xl font-medium text-zinc-900 dark:text-white">About</h2>
+          <h2 className="text-xl font-medium text-zinc-900 dark:text-white flex items-center gap-3">
+            <span className="w-8 h-[1px] bg-zinc-300 dark:bg-zinc-700"></span>
+            About
+          </h2>
           <div className="prose prose-zinc dark:prose-invert max-w-none text-zinc-600 dark:text-zinc-400 leading-relaxed">
             <p>
               Fokus utama saya terbagi antara rekayasa perangkat lunak dan keamanan sistem. Melalui kompetisi Capture The Flag (CTF), saya melatih insting untuk mengidentifikasi celah dan melakukan *debugging* tingkat lanjut menggunakan GDB serta eksploitasi *binary*.
@@ -93,7 +99,7 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap gap-2 pt-4">
             {['Python', 'C++', 'Java', 'Go', 'SQL', 'Data Science', 'Binary Exploitation', 'React'].map((skill) => (
-              <span key={skill} className="px-3 py-1 rounded-md bg-zinc-200/50 dark:bg-zinc-800/50 text-zinc-700 dark:text-zinc-300 text-xs font-medium border border-zinc-200 dark:border-zinc-700/50">
+              <span key={skill} className="px-4 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-800/80 text-zinc-700 dark:text-zinc-300 text-xs font-medium border border-zinc-200/80 dark:border-zinc-700/50 hover:border-cyan-500/50 dark:hover:border-cyan-400/50 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors cursor-default">
                 {skill}
               </span>
             ))}
@@ -225,8 +231,8 @@ export default function Home() {
         </section>
 
         {/* Minimalist Contact Section */}
-        <section id="contact" className="space-y-8 scroll-mt-32 border-t border-zinc-200 dark:border-zinc-800/50 pt-16">
-          <div className="max-w-2xl">
+        <section id="contact" className="space-y-8 scroll-mt-32 border-t border-zinc-200 dark:border-zinc-800/50 pt-16 relative">
+          <div className="max-w-2xl relative z-10">
             <h2 className="text-xl font-medium text-zinc-900 dark:text-white mb-4">Let's Connect</h2>
             <p className="text-zinc-600 dark:text-zinc-400 mb-10 leading-relaxed">
               Tertarik berkolaborasi dalam rekayasa perangkat lunak, keamanan sistem, atau sekadar bertukar pikiran mengenai komposisi visual dan filosofi? Kotak masuk saya selalu terbuka.
@@ -234,24 +240,33 @@ export default function Home() {
             
             <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <input 
-                  type="text" 
-                  placeholder="Name" 
-                  className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-700 pb-3 focus:outline-none focus:border-zinc-900 dark:focus:border-white text-zinc-900 dark:text-white placeholder-zinc-400 transition-colors rounded-none"
-                />
-                <input 
-                  type="email" 
-                  placeholder="Email Address" 
-                  className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-700 pb-3 focus:outline-none focus:border-zinc-900 dark:focus:border-white text-zinc-900 dark:text-white placeholder-zinc-400 transition-colors rounded-none"
-                />
+                <div className="relative group">
+                  <input 
+                    type="text" 
+                    placeholder="Name" 
+                    className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-700 pb-3 focus:outline-none focus:border-cyan-500 dark:focus:border-cyan-400 text-zinc-900 dark:text-white placeholder-zinc-400 transition-colors rounded-none peer"
+                  />
+                  <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-cyan-500 dark:bg-cyan-400 transition-all duration-300 peer-focus:w-full"></div>
+                </div>
+                <div className="relative group">
+                  <input 
+                    type="email" 
+                    placeholder="Email Address" 
+                    className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-700 pb-3 focus:outline-none focus:border-cyan-500 dark:focus:border-cyan-400 text-zinc-900 dark:text-white placeholder-zinc-400 transition-colors rounded-none peer"
+                  />
+                  <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-cyan-500 dark:bg-cyan-400 transition-all duration-300 peer-focus:w-full"></div>
+                </div>
               </div>
-              <textarea 
-                placeholder="Your Message" 
-                rows={3}
-                className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-700 pb-3 focus:outline-none focus:border-zinc-900 dark:focus:border-white text-zinc-900 dark:text-white placeholder-zinc-400 transition-colors resize-none rounded-none"
-              ></textarea>
+              <div className="relative group">
+                <textarea 
+                  placeholder="Your Message" 
+                  rows={3}
+                  className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-700 pb-3 focus:outline-none focus:border-cyan-500 dark:focus:border-cyan-400 text-zinc-900 dark:text-white placeholder-zinc-400 transition-colors resize-none rounded-none peer"
+                ></textarea>
+                <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-cyan-500 dark:bg-cyan-400 transition-all duration-300 peer-focus:w-full"></div>
+              </div>
               <div className="pt-2">
-                <button className="px-8 py-3 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-black text-sm font-medium hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-transform active:scale-95">
+                <button className="px-8 py-3 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-black text-sm font-medium hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-all hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] active:scale-95">
                   Send Message
                 </button>
               </div>
