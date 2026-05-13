@@ -5,14 +5,14 @@
 
 /* 2. Warna default (Light Mode) */
 :root {
-  --background: #f8fafc; /* Warna slate-50 */
-  --foreground: #0f172a; /* Warna slate-900 */
+  --background: #f8fafc;
+  --foreground: #0f172a;
 }
 
 /* 3. Warna saat tombol Dark Mode ditekan */
 :root.dark {
   --background: #050505;
-  --foreground: #cbd5e1; /* Warna slate-300 */
+  --foreground: #cbd5e1;
 }
 
 @theme inline {
@@ -26,11 +26,30 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  transition: background-color 0.5s ease, color 0.5s ease; /* Efek transisi mulus */
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+/* Custom Animations */
 @layer utilities {
   .text-shadow-glow {
     text-shadow: 0 0 10px rgba(6, 182, 212, 0.8), 0 0 20px rgba(6, 182, 212, 0.4);
   }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
