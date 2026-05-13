@@ -137,10 +137,10 @@ export default function Home() {
           </h2>
           <div className="prose prose-zinc dark:prose-invert max-w-none text-zinc-600 dark:text-zinc-400 leading-relaxed">
             <p>
-              Fokus utama saya terbagi antara rekayasa perangkat lunak dan keamanan sistem. Melalui kompetisi Capture The Flag (CTF), saya melatih insting untuk mengidentifikasi celah dan melakukan <i>debugging</i> tingkat lanjut menggunakan GDB serta eksploitasi <i>binary</i>.
+              I’m Jonathan Alveraldo Bangun, a second-year student at ITB’s School of Electrical Engineering and Informatics - Computing. I’m deeply interested in the fields of energy computation.  {/*<i>debugging</i> tingkat lanjut menggunakan GDB serta eksploitasi <i>binary</i>. */}
             </p>
             <p>
-              Di luar ranah teknis komputasi, saya mendalami fotografi teknikal dan menulis. Hal ini membantu saya menyeimbangkan logika murni dengan apresiasi terhadap komposisi visual, estetika ruang liminal, dan eksplorasi narasi konseptual.
+              Beyond technology, I’m also interested in economics, math, biology, and physics.
             </p>
           </div>
         </section>
