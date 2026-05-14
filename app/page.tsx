@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-[#09090b] text-zinc-800 dark:text-zinc-300 font-sans selection:bg-cyan-500/30 selection:text-zinc-900 dark:selection:bg-cyan-400/30 dark:selection:text-white transition-colors duration-500 relative overflow-hidden">
       
-      {/* Background Dot Pattern (Menambah tekstur/ramai tapi tetap subtle) */}
+      {/* Background Dot Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] dark:bg-[radial-gradient(#27272a_1px,transparent_1px)] [background-size:24px_24px] opacity-50 pointer-events-none" />
 
       {/* Subtle Premium Glow */}
@@ -84,7 +84,6 @@ export default function Home() {
         
         {/* Hero Section */}
         <section className="space-y-6 pt-10 relative">
-          {/* Floating Badges */}
           <div className="flex gap-3 mb-6 animate-float">
             <span className="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-semibold border border-cyan-500/20">
               Informatics Engineering @ ITB
@@ -113,10 +112,9 @@ export default function Home() {
 
       </main>
 
-      {/* Infinite Marquee Section (Full Width) */}
+      {/* Infinite Marquee Section */}
       <div className="relative w-full overflow-hidden py-4 border-y border-zinc-200 dark:border-zinc-800/50 bg-zinc-100/50 dark:bg-zinc-900/30 backdrop-blur-sm z-10">
         <div className="flex w-[200%] animate-marquee">
-          {/* Loop array dua kali agar efek berjalan mulus tanpa terputus */}
           {[...techStack, ...techStack].map((skill, i) => (
             <div key={i} className="flex items-center justify-center w-max px-8">
               <span className="text-sm font-bold tracking-wider text-zinc-400 dark:text-zinc-600 uppercase">
@@ -137,7 +135,7 @@ export default function Home() {
           </h2>
           <div className="prose prose-zinc dark:prose-invert max-w-none text-zinc-600 dark:text-zinc-400 leading-relaxed">
             <p>
-              I’m Jonathan Alveraldo Bangun, a second-year student at ITB’s School of Electrical Engineering and Informatics - Computing. I’m deeply interested in the fields of energy computation.  {/*<i>debugging</i> tingkat lanjut menggunakan GDB serta eksploitasi <i>binary</i>. */}
+              I’m Jonathan Alveraldo Bangun, a second-year student at ITB’s School of Electrical Engineering and Informatics - Computing. I’m deeply interested in the fields of energy computation.
             </p>
             <p>
               Beyond technology, I’m also interested in economics, math, biology, and physics.
@@ -154,7 +152,21 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-            {/* Card Baru - Makalah Algeo */}
+            {/* Card Baru - Ice Sliding Puzzle Solver */}
+            <a href="https://github.com/jonveral/Tucil3_13524120_13524125" target="_blank" rel="noopener noreferrer" className="group block p-6 rounded-2xl bg-white dark:bg-zinc-900/50 hover:bg-zinc-50 dark:hover:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-800/50 hover:border-cyan-500/30 transition-all hover:shadow-xl hover:shadow-cyan-500/5 hover:-translate-y-1">
+              <div className="flex justify-between items-start mb-2">
+                <div className="text-xs font-semibold tracking-wider text-cyan-600 dark:text-cyan-400 uppercase">Python / Algorithms</div>
+                <span className="text-zinc-400 opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+              </div>
+              <h3 className="text-lg font-medium text-zinc-900 dark:text-white mb-2">
+                Ice Sliding Puzzle Solver
+              </h3>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 line-clamp-3">
+                Program solver untuk permainan Ice Sliding Puzzle menggunakan algoritma pathfinding UCS, GBFS, dan A*. Karakter bergerak di atas permukaan es yang licin dan tidak berhenti sampai menabrak dinding atau rintangan.
+              </p>
+            </a>
+
+            {/* Card - SPL Makalah */}
             <a href="https://informatika.stei.itb.ac.id/~rinaldi.munir/AljabarGeometri/2025-2026/Makalah/Makalah-IF2023-Algeo-2025%20(121).pdf" target="_blank" rel="noopener noreferrer" className="group block p-6 rounded-2xl bg-white dark:bg-zinc-900/50 hover:bg-zinc-50 dark:hover:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-800/50 hover:border-cyan-500/30 transition-all hover:shadow-xl hover:shadow-cyan-500/5 hover:-translate-y-1">
               <div className="flex justify-between items-start mb-2">
                 <div className="text-xs font-semibold tracking-wider text-cyan-600 dark:text-cyan-400 uppercase">Research Paper</div>
@@ -168,7 +180,7 @@ export default function Home() {
               </p>
             </a>
 
-            {/* Card 1 */}
+            {/* Card - Huffman Paper */}
             <a href="https://informatika.stei.itb.ac.id/~rinaldi.munir/Matdis/2024-2025-2/Makalah2025/Makalah-Matdis-2025-IF-ITB%20(120).pdf" target="_blank" rel="noopener noreferrer" className="group block p-6 rounded-2xl bg-white dark:bg-zinc-900/50 hover:bg-zinc-50 dark:hover:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-800/50 hover:border-cyan-500/30 transition-all hover:shadow-xl hover:shadow-cyan-500/5 hover:-translate-y-1">
               <div className="flex justify-between items-start mb-2">
                 <div className="text-xs font-semibold tracking-wider text-cyan-600 dark:text-cyan-400 uppercase">Research Paper</div>
@@ -182,7 +194,7 @@ export default function Home() {
               </p>
             </a>
 
-            {/* Card 2 */}
+            {/* Card - SehatSehatKuatKuat */}
             <a href="https://github.com/jonveral/Tubes2STIMA" target="_blank" rel="noopener noreferrer" className="group block p-6 rounded-2xl bg-white dark:bg-zinc-900/50 hover:bg-zinc-50 dark:hover:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-800/50 hover:border-cyan-500/30 transition-all hover:shadow-xl hover:shadow-cyan-500/5 hover:-translate-y-1">
               <div className="flex justify-between items-start mb-2">
                 <div className="text-xs font-semibold tracking-wider text-cyan-600 dark:text-cyan-400 uppercase">Web Application</div>
@@ -196,7 +208,7 @@ export default function Home() {
               </p>
             </a>
 
-            {/* Card 3 */}
+            {/* Card - Battlecode */}
             <a href="https://github.com/jonveral/Tubes1STIMA" target="_blank" rel="noopener noreferrer" className="group block p-6 rounded-2xl bg-white dark:bg-zinc-900/50 hover:bg-zinc-50 dark:hover:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-800/50 hover:border-cyan-500/30 transition-all hover:shadow-xl hover:shadow-cyan-500/5 hover:-translate-y-1">
               <div className="flex justify-between items-start mb-2">
                 <div className="text-xs font-semibold tracking-wider text-cyan-600 dark:text-cyan-400 uppercase">Game AI / Java</div>
@@ -210,7 +222,7 @@ export default function Home() {
               </p>
             </a>
 
-            {/* Card 4 */}
+            {/* Card - Nimonspoli */}
             <div className="group block p-6 rounded-2xl bg-zinc-100/30 dark:bg-zinc-900/30 border border-zinc-200/50 dark:border-zinc-800/30 transition-all cursor-default">
               <div className="text-xs font-semibold tracking-wider text-zinc-500 uppercase mb-2">C++ / OOP</div>
               <h3 className="text-lg font-medium text-zinc-900 dark:text-white mb-2">
@@ -223,7 +235,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Gallery Section - Updated with Real Images */}
+        {/* Gallery Section */}
         <section id="gallery" className="space-y-8 scroll-mt-32 border-t border-zinc-200 dark:border-zinc-800/50 pt-16">
           <div className="flex justify-between items-baseline">
             <h2 className="text-xl font-medium text-zinc-900 dark:text-white">Photography & Visuals</h2>
@@ -236,17 +248,12 @@ export default function Home() {
                 key={index} 
                 className={`relative group rounded-2xl overflow-hidden bg-zinc-200 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 ${image.span || ''} ${image.span && image.span.includes('row-span-2') ? 'aspect-[3/4]' : 'aspect-square'}`}
               >
-                {/* Gambar Asli - Gunakan format .jpg sesuai input */}
                 <img 
                   src={image.src} 
                   alt={image.alt} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1"
                 />
-
-                {/* Overlay Gradient saat Hover */}
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out"></div>
-
-                {/* Teks Deskripsi saat Hover */}
                 <div className="absolute bottom-0 left-0 p-5 w-full opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 transition-all duration-500 ease-in-out">
                   <div className="text-sm font-bold text-white tracking-tight">{image.title}</div>
                   <div className="text-xs text-zinc-300 font-mono mt-1">{image.subtitle}</div>
@@ -286,7 +293,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Minimalist Contact Section */}
+        {/* Contact Section */}
         <section id="contact" className="space-y-8 scroll-mt-32 border-t border-zinc-200 dark:border-zinc-800/50 pt-16 relative">
           <div className="max-w-2xl relative z-10">
             <h2 className="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white mb-4">Let's Connect</h2>
