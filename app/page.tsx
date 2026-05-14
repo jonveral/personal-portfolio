@@ -152,6 +152,20 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
+            {/* Card Baru - Queens Solver */}
+            <a href="https://github.com/jonveral/Tucil1_13524120" target="_blank" rel="noopener noreferrer" className="group block p-6 rounded-2xl bg-white dark:bg-zinc-900/50 hover:bg-zinc-50 dark:hover:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-800/50 hover:border-cyan-500/30 transition-all hover:shadow-xl hover:shadow-cyan-500/5 hover:-translate-y-1">
+              <div className="flex justify-between items-start mb-2">
+                <div className="text-xs font-semibold tracking-wider text-cyan-600 dark:text-cyan-400 uppercase">Python / Algorithms</div>
+                <span className="text-zinc-400 opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+              </div>
+              <h3 className="text-lg font-medium text-zinc-900 dark:text-white mb-2">
+                Queens Solver
+              </h3>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 line-clamp-3">
+                Penyelesaian Permainan Queens LinkedIn menggunakan Algoritma Brute Force (Exhaustive Search). Program ini adalah aplikasi berbasis GUI yang dirancang untuk mencari solusi dari permainan logika Queens tanpa menggunakan heuristik apa pun.
+              </p>
+            </a>
+
             {/* Card Baru - VoxelizationOctree */}
             <a href="https://github.com/NeswaEA/Tucil2_13524120_13524136" target="_blank" rel="noopener noreferrer" className="group block p-6 rounded-2xl bg-white dark:bg-zinc-900/50 hover:bg-zinc-50 dark:hover:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-800/50 hover:border-cyan-500/30 transition-all hover:shadow-xl hover:shadow-cyan-500/5 hover:-translate-y-1">
               <div className="flex justify-between items-start mb-2">
